@@ -7,7 +7,7 @@ A rock paper scissors game.
 
 @author: LZ-FSDev
 @Python version: Python 3.9
-@version: 0.0.2
+@version: 0.0.3
 """
 
 print("Welcome to rock paper scissors!")
@@ -32,3 +32,26 @@ print()
 randomChoice = random.randint(0,2)
 
 print("Computer: {} \nUser: {}".format(choices[randomChoice], userChoice))
+print()
+
+if (userChoice == "Scissors"):
+    if (randomChoice == "Paper"):
+        print("You win")
+    elif (randomChoice == "Rock"):
+        print("You lose")
+    else:
+        print("It's a tie")
+elif (userChoice == "Rock"):
+    if (randomChoice == "Scissors"):
+        print("You win")
+    elif (randomChoice == "Paper"):
+        print("You lose")
+    else:
+        print("It's a tie")
+else:
+    if (randomChoice == "Scissors"):
+        print("You lose")
+    elif (randomChoice == "Rock"):
+        print("You win")
+    else:
+        print("It's a tie")
