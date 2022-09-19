@@ -7,7 +7,7 @@ A rock paper scissors game.
 
 @author: LZ-FSDev
 @Python version: Python 3.9
-@version: 0.0.3
+@version: 0.0.4
 """
 
 print("Welcome to rock paper scissors!")
@@ -29,9 +29,11 @@ print("Rock, Paper, Scissors!")
 print()
 
 #generating random int between 0 and 2 inclusive
-randomChoice = random.randint(0,2)
+randomNumber = random.randint(0,2)
 
-print("Computer: {} \nUser: {}".format(choices[randomChoice], userChoice))
+randomChoice = choices[randomNumber]
+
+print("Computer: {} \nUser: {}".format(randomChoice, userChoice))
 print()
 
 if (userChoice == "Scissors"):
