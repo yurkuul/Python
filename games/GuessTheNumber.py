@@ -5,19 +5,36 @@ Guess the number game.
 
 @author: LZ-FSDev
 @Python version: Python 3.9
-@version: 0.0.2
+@version: 0.0.3
 """
 
 print("Welcome to Guess The Number!")
 print()
 
-lowRange = int(input("Insert the lowest value you would like to guess from: "))
+choosingNumber = True
 
-highRange = int(input("Insert the highest value you would like to guess from: "))
+lowRange = input("Insert the lowest value you would like to guess from: ")
 
-while (highRange < lowRange):
-    print("That is lower than your lowest value!")
-    highRange = int(input("Insert the highest value you would like to guess from: "))
+while (not lowRange.isnumeric()):
+    print("That is not a value!")
+    lowRange = input("Insert the lowest value you would like to guess from: ")
+print()
+
+lowRange = int(lowRange)
+
+highRange = input("Insert the highest value you would like to guess from: ")
+
+while (choosingNumber):
+    if (not highRange.isnumeric()):
+        print("That is not a value!")
+        highRange = input("Insert the highest value you would like to guess from: ")
+    elif (int(highRange) < lowRange):
+        print("That is lower than your lowest value!")
+        highRange = input("Insert the highest value you would like to guess from: ")
+    else:
+        choosingNumber = False
+
+highRange = int(highRange)
 
 print()
 
@@ -32,7 +49,7 @@ guess = int(input("Enter your guess: "))
 while (stillGuessing):
     if (guess == number):
         print("You win!")
-        break
+        stillGuessing = False
     if (guess < lowRange or guess > highRange):
         print("That's outside the guessing range!")
         print()
