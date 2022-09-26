@@ -5,7 +5,7 @@ Guess the number game.
 
 @author: LZ-FSDev
 @Python version: Python 3.9
-@version: 0.0.3
+@version: 0.0.4
 """
 
 print("Welcome to Guess The Number!")
@@ -47,11 +47,16 @@ print()
 guess = int(input("Enter your guess: "))
 
 while (stillGuessing):
+    difference = guess - number
+    if (guess < lowRange or guess > highRange):
+        print("That's outside the guessing range!")
+    elif (difference <= 10 and difference > 0):
+        print("You are within 10 digits above the number!")
+    elif (abs(difference) <= 10):
+        print("You are within 10 digits below the number!")
+    print()
+    guess = int(input("Enter your guess: "))
+    print()
     if (guess == number):
         print("You win!")
         stillGuessing = False
-    if (guess < lowRange or guess > highRange):
-        print("That's outside the guessing range!")
-        print()
-    guess = int(input("Enter your guess: "))
-    print()
