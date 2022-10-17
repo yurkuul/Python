@@ -5,7 +5,7 @@ lines, words, and characters from the file will be printed.
 
 @author: Lisa
 @Python version: Python 3.8.10
-@version: 0.0.3
+@version: 0.0.4
 """
 
 userFile = open("user_file.txt", "w") #file user will to adding to
@@ -45,17 +45,18 @@ print("-----------------------------------------------")
 #reopen the file for reading
 userFile = open("user_file.txt")
 
-#TODO: print out the words and characters per line
-
 #goes through each line from the file
 for line in userFile:
     print("Line " + str(lines)) #prints out line number
-    print (line) #prints out the line from file
+    print (line.strip()) #prints out the line from file
+    characters = len(line.strip())
+    words = len(line.split())
+    print("This line has {} words and {} characters.".format(words,characters))
     lines+=1
     totalLines+=1
-    totalWords += len(line.strip().split()) 
-    for character in line:
-        totalCharacters +=1
+    totalCharacters += characters
+    totalWords += words
+    print()
 
 print("----------------------------------------------------------------------")
 
