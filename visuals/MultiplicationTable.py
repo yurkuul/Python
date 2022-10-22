@@ -3,18 +3,28 @@ Prints a 9 x 9 multiplication table.
 
 @author: Lisa
 @Python version: Python 3.8.10
-@version: 0.0.1
+@version: 0.0.2
 """
 
-#print the row header
-for i in range (1, 10):
-    print("\t{}".format(i), end="")
+def printHeader():
+    """
+    Prints the row header for the multiplication table
+    """
+    header = ""
+    for i in range (1, 10):
+        header += "\t{}".format(i)
+    header += "\n"
+    return header
 
-print() #ends the header
+def printTable(rowNum):
+    """
+    Prints the table for the multiplication table
+    """
+    theTable = ""
+    for column in range(1, 10):
+        theTable += str(rowNum * column) 
 
-for row in range(1, 10): #prints out the rows
-    #print the column header
-    print(str(row) + "\t", end="")
-    for column in range(1, 10): #prints out the columns
-        print(row * column, end = "\t") #tabs each value
-    print() #ends each multiplication row
+print(printHeader())
+for row in range(1, 10):
+    print(row)
+    print()
