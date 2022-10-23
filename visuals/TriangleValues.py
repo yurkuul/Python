@@ -3,14 +3,19 @@ Prints a triangle of values corresponding to the row.
 
 @author: Lisa
 @version: Python 3.9
+@version 0.0.2
 """
 
-rows = input("Enter how many rows you want for your triangle:")
+def getTriangle(rows):
+    """
+    Returns the current row of numbers for the pyramid
+    """
+    theRow = ""
+    for i in range(1, int(rows)+1):
+        theRow += str(i) + " "
+    return theRow
 
-rowNumber = 1
+rows = input("Enter how many rows you want for your triangle: ")
 
-for x in range(int(rows)):
-    for y in range(rowNumber):
-        print (rowNumber, end= ' ')
-    print()
-    rowNumber += 1
+for i in range(int(rows)+1):
+    print(getTriangle(i))
