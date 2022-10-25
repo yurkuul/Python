@@ -1,14 +1,13 @@
 """
 Prints a 9 x 9 multiplication table.
-
 @author: Lisa
 @Python version: Python 3.8.10
-@version: 0.0.2
+@version: 0.0.3
 """
 
-def printHeader():
+def getHeader():
     """
-    Prints the row header for the multiplication table
+    Returns the row header for the multiplication table
     """
     header = ""
     for i in range (1, 10):
@@ -16,15 +15,17 @@ def printHeader():
     header += "\n"
     return header
 
-def printTable(rowNum):
+def getRow(rowNum):
     """
-    Prints the table for the multiplication table
+    Returns the row for the multiplication table
     """
-    theTable = ""
+    theRow = ""
     for column in range(1, 10):
-        theTable += str(rowNum * column) 
+        theRow += str(rowNum * column) + "\t"
+    return theRow
 
-print(printHeader())
+print(getHeader())
 for row in range(1, 10):
-    print(row)
+    print(str(row) + "\t", end="")
+    print(getRow(row))
     print()
