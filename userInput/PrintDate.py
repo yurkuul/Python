@@ -23,3 +23,29 @@ def checkMonth():
             print("That is not a valid month.")
         else:
             return int(month)
+
+def checkDay():
+    checkValid = False
+    while (True):
+        day = input("Please enter today's date: ")
+        if (not day.isnumeric()):
+            print("That is not a number!")
+        elif (int(day) <= 0):
+            print("That is not a valid day.")
+        elif (month in [1, 3, 5, 7, 8, 10, 12]):
+            if (int(day) > 31):
+                print("That is out of range for your month.")
+            else:
+                checkValid = True
+        elif (month in [4, 6, 9, 11]):
+            if (int(day) > 30):
+                print("That is out of range for your month.")
+            else:
+                checkValid = True
+        elif (month == 2):
+            if (int(day) > 28):
+                print("That is out of range for your month.")
+            else:
+                checkValid = True
+        if (checkValid):
+            return int(day)
