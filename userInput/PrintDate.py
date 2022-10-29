@@ -49,3 +49,27 @@ def checkDay():
                 checkValid = True
         if (checkValid):
             return int(day)
+
+def checkYear():
+    while (True):
+        year = input("Please enter a year: ")
+        if (not year.isnumeric()):
+            print("That is not a year!")
+        elif (int(year) < 1000 or int(year) > 2022):
+            print("That year is out of range.")
+        else:
+            return int(year)
+
+theWeekDay = checkDayName()
+print()
+month = checkMonth()
+print()
+day = checkDay()
+print()
+year = checkYear()
+print()
+
+theWeekDay = daysOfWeek[theWeekDay]
+theMonth = months[month]
+
+print("The date is {}, {} {}, {}.".format(theWeekDay, theMonth, day, year))
