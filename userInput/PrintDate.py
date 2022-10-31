@@ -4,7 +4,12 @@ months = {1:"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:"June",
           7:"July", 8:"August", 9:"September", 10:"October", 11:"November",
           12:"December"}
 
-def checkDayName():
+def checkDayName() -> int:
+    """
+    Checks to see if the day entered is a valid integer and input.
+    Should be in between 1 and 7 inclusive.
+    1 is Sunday.
+    """
     while (True):
         theDay = input("Please enter the weekday/weekend name as an integer: ")
         if (not theDay.isnumeric()):
@@ -14,7 +19,12 @@ def checkDayName():
         else:
             return int(theDay)
 
-def checkMonth():
+def checkMonth() -> int:
+    """
+    Checks to see if the month entered is a valid integer and input.
+    Should be in between 1 and 12 inclusive.
+    1 is January.
+    """
     while (True):
         month = input("Please enter a month: ")
         if (not month.isnumeric()):
@@ -24,7 +34,12 @@ def checkMonth():
         else:
             return int(month)
 
-def checkDay():
+def checkDay() -> int:
+    """
+    Checks to see if the day entered is a valid integer and input.
+    Valid input is based on the number of days in the corresponding month.
+    Does not include leap year (29 days in February).
+    """
     checkValid = False
     while (True):
         day = input("Please enter today's date: ")
@@ -50,7 +65,11 @@ def checkDay():
         if (checkValid):
             return int(day)
 
-def checkYear():
+def checkYear() -> int:
+    """
+    Checks to see if the year entered is an integer and valid.
+    A year is valid if it is in between 1000 to 2022 inclusive.
+    """
     while (True):
         year = input("Please enter a year: ")
         if (not year.isnumeric()):
