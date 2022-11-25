@@ -29,6 +29,23 @@ def det3(array):
     cofact2 = array[1:3, :3:2]
     cofact3 = array[1:3, :2]
     return det2(cofact1) - det2(cofact2) + det2(cofact3)
+    
+def addMatrices(array1, array2):
+    """
+    Calculates the sum of 2 matrices. Matrices must be of the same size.
+    
+    Parameter array1 and array2 are matrices that are size mxn.
+    
+    Returns the sum of the 2 matrices. -1 if sizes are different.
+    """
+    sumArray = np.zeros((len(array1), len(array1[0])))
+    if len(array1) != len(array2) or len(array1[0]) != len(array2[0]):
+        return -1
+    for row in range(len(array1)):
+        for column in range(len(array1[row])):
+            sumArray[row][column] = array1[row][column] + array2[row][column]
+    return sumArray
+            
 
 #MAINLINE
 array1 = np.zeros((3, 3))
@@ -47,3 +64,5 @@ print("---------------------------")
 print("Determinate of a 3x3 array:")
 print(det3(array1))
 print("---------------------------")
+print("Adding two 3x3 matrices:")
+print(addMatrices(array1, array2))
